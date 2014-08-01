@@ -1,0 +1,30 @@
+<div class="alert alert-danger" role="alert" ng-hide="meta.page!=0">
+        <a href="#" class="alert-link">Perhaps you should search for something else....Its a 404!</a>
+    </div>
+<table class="table table-bordered table-responsive table-hover table-striped" ng-hide="meta.page==0">
+          <thead>
+          <td access-level="admin">Edit</td>
+          <td access-level="admin">Delete</td>
+          <td>Popularity</td>
+          <td>Name</td>
+          <td>Director</td>
+          <td>Genre</td>
+          </thead>
+
+          <tbody>
+                <tr ng-repeat="movie in movies" ng-data-pk="{{movie.pk}}" ng-dblclick="console.log('Hii')" style="user-selection:false;">
+                    <td access-level="admin"><a ng-href="#/edit?id={{movie.pk}}" ng-click="share(movie)" >edit</a> </td>
+                    <td access-level="admin"><a href="#" ng-click="delete(movie.pk)" >delete</a> </td>
+                    <td ng-dblclick="console.log('Hii')">{{movie.popularity}}</td>
+                    <td>{{movie.name}}</td>
+                    <td>{{movie.director}}</td>
+                    <td>
+                        <span class="genre" ng-repeat="gen in movie.genre">{{gen}}</span>
+                    </td>
+                </tr>
+          </tbody>
+       <ul class="pager">
+          <li class="previous" ng-hide="meta.page-1==0 || meta.page==0"><a ng-click="previousPagePath()">&larr; Older</a></li>
+          <li class="next" ng-hide="meta.page+1>meta.total_pages || meta.page==0"><a ng-click="nextPagePath()">Newer &rarr;</a></li>
+        </ul>
+    </table>
