@@ -9,8 +9,8 @@
 angular.module('JMDB.services', [
     'ngResource'
 ])
-    .factory('Movie',['$resource', function($resource){
-    var API_SERVER = 'http://localhost:8000/';
+    .factory('Movie',['$resource','API_SERVER', function($resource, API_SERVER){
+
     return $resource('http://localhost',{},{
         getPage:{
             method:'GET',

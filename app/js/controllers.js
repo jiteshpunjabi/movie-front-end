@@ -77,7 +77,7 @@ angular.module('JMDB.controllers', [])
         };
         $scope.register =  function(){
             if($scope.username && $scope.password && $scope.email){
-                AuthService.login($scope.username,$scope.password).then(success,failure);
+                AuthService.register($scope.username,$scope.password).then(success,failure);
             }
         }
     }])
