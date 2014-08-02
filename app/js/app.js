@@ -22,8 +22,8 @@ config(['$routeProvider', '$httpProvider',function($routeProvider,$httpProvider)
 
 }])
 
-    .constant('API_SERVER','http://localhost:8000/');
-//.constant('API_SERVER','http://stark-bayou-6519.herokuapp.com/');
+    //.constant('API_SERVER','http://localhost:8000/');
+.constant('API_SERVER','http://stark-bayou-6519.herokuapp.com/');
 
 
 
