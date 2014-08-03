@@ -56,9 +56,10 @@ angular.module('JMDB.services', [
             }
         }
     })
-.factory('AuthInterceptor', function ($rootScope, $q, $window, $location) {
+.factory('AuthInterceptor', function ($rootScope, $q, $window, $location,API_SERVER) {
   return {
     request: function (config) {
+
       config.headers = config.headers || {};
       if ($window.localStorage.token) {
         config.headers.Authorization = 'Token ' + $window.localStorage.token;
